@@ -1,13 +1,3 @@
-import React from "react";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignOutButton,
-  UserDropdown,
-  User
-} from "@asgardeo/react";
-
 import { Card, CardContent } from "./Card";
 import { MapPin, Search, Star } from "lucide-react";
 import Input from "./Input";
@@ -15,23 +5,25 @@ import Button from "./Button";
 import burger from "../assets/borgir.avif";
 import sushi from "../assets/sushi.jpg";
 import resto from "../assets/resto.jpg";
+import Footer from "./Footer";
+import { SignedIn, SignedOut, SignInButton, SignOutButton, UserDropdown } from "@asgardeo/react";
 
 const mockRestaurants = [
   {
     name: "Spice Route",
-    location: "Connaught Place, Delhi",
+    location: "HSR Layout, Bengaluru",
     rating: 4.5,
     image: resto,
   },
   {
     name: "Burger Nation",
-    location: "Bandra, Mumbai",
+    location: "Indiranagar, Bengaluru",
     rating: 4.2,
     image: burger,
   },
   {
     name: "Sushi Central",
-    location: "Koregaon Park, Pune",
+    location: "Church Street, Bengaluru",
     rating: 4.8,
     image: sushi,
   },
@@ -50,27 +42,18 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex gap-4">
-          <SignedIn>
-            <UserDropdown />
-            <SignOutButton />
-          </SignedIn>
           <SignedOut>
             <SignInButton />
           </SignedOut>
+          <SignedIn>
+            <UserDropdown/>
+          </SignedIn>
         </div>
       </header>
 
-       <User>
-            {(user) => (
-              <div>
-                <p>Welcome back, {user.name.givenName + " " + user.familyName || user.sub}</p>
-              </div>
-            )}
-          </User>
-
       {/* Search Bar */}
-      <div className="max-w-7xl mx-auto mt-12 px-20">
-        <div className="flex items-center gap-4 shadow-md rounded-xl p-5 bg-white">
+      <div className="max-w-7xl mx-auto mt-6 px-20">
+        <div className="flex items-center gap-4 shadow-md rounded-xl p-3 bg-white">
           <Search className="text-gray-400 w-6 h-6" />
           <Input
             placeholder="Search for restaurants, cuisine or a dish"
@@ -80,7 +63,7 @@ export default function HomePage() {
       </div>
 
       {/* Featured Restaurants */}
-      <div className="max-w-7xl mx-auto mt-16 px-20">
+      <div className="max-w-7xl mx-auto mt-8 px-20">
         <h2 className="text-2xl font-semibold mb-6">Popular Restaurants</h2>
         <div className="grid grid-cols-3 gap-10">
           {mockRestaurants.map((restaurant, idx) => (
@@ -107,6 +90,8 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

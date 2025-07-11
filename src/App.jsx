@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HomePage from './components/Homepage'
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router";
+import HomePage from "./components/Homepage";
+import { SignIn } from "@asgardeo/react";
 
 function App() {
-
   return (
     <>
-      <HomePage></HomePage>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sign-in" element={<SignIn/>} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
