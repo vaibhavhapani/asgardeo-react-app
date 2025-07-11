@@ -19,7 +19,8 @@ This project demonstrates how to integrate **Asgardeo** with a **React** applica
 3. Choose **React** from the available templates.
 4. Complete the setup wizard with:
     
-    ```Name: asgardeo-react
+    ```
+    Name: asgardeo-react
     Authorized redirect URL: http://localhost:5173 ```
 
 
