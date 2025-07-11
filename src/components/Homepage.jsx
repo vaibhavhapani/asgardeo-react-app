@@ -6,7 +6,14 @@ import burger from "../assets/borgir.avif";
 import sushi from "../assets/sushi.jpg";
 import resto from "../assets/resto.jpg";
 import Footer from "./Footer";
-import { SignedIn, SignedOut, SignInButton, SignOutButton, UserDropdown } from "@asgardeo/react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+  User,
+  UserDropdown,
+} from "@asgardeo/react";
 
 const mockRestaurants = [
   {
@@ -46,10 +53,18 @@ export default function HomePage() {
             <SignInButton />
           </SignedOut>
           <SignedIn>
-            <UserDropdown/>
+            <UserDropdown />
           </SignedIn>
         </div>
       </header>
+
+      <User>
+        {(user) => (
+          <div className="max-w-7xl mx-auto mt-6 px-20 text-2xl">
+            <p>Welcome back, {user.name.givenName + " " + user.name.familyName}!!</p>
+          </div>
+        )}
+      </User>
 
       {/* Search Bar */}
       <div className="max-w-7xl mx-auto mt-6 px-20">
