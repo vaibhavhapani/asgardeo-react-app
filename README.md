@@ -21,8 +21,7 @@ This project demonstrates how to integrate **Asgardeo** with a **React** applica
     
     ```
     Name: asgardeo-react
-    Authorized redirect URL: http://localhost:5173 ```
-
+    Authorized redirect URL: http://localhost:5173
 
 5. Once the application is created, go to the **Guide** tab and note the following:
 
