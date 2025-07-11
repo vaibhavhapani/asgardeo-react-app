@@ -26,11 +26,10 @@ This project demonstrates how to integrate **Asgardeo** with a **React** applica
 
 5. Once the application is created, go to the **Guide** tab and note the following:
 
-- **Client ID** – Unique identifier for the application.
-- **Base URL** – Usually in the format:  
-  `https://api.asgardeo.io/t/<your-organization-name>`
+    - **Client ID** – Unique identifier for the application.
+    - **Base URL** – Usually in the format: `https://api.asgardeo.io/t/<your-organization-name>`
 
-> **ℹ️ Note:** The redirect URL is where users are sent after login. For local development, use `http://localhost:5173`.
+    > **ℹ️ Note:** The redirect URL is where users are sent after login. For local development, use `http://localhost:5173`.
 
 ---
 
